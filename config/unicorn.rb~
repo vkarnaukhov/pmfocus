@@ -1,5 +1,5 @@
 worker_processes 1  # количество воркер процессов, я люблю делать их по кол-ву ядер например
-preload_app true
+# preload_app true
 user('deployer','staff')  # здесь указываем пользователя и группу его
 timeout 30 # таймаут работы приложения
 
@@ -26,6 +26,5 @@ before_fork do |server, worker|
 end
 
 after_fork do |server, worker|
-  Rails.cache.reset if Rails.cache.respond_to? :reset
   defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
 end
