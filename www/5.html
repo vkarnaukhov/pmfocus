@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.doubletap.js"></script> Убрал, чтобы не перехватывало скролл на таблице -->
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="js/highcharts-more.js"></script>
+<script type="text/javascript" src="lib/jQueryUI/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="js/s_scripts.js"></script>
+<script type="text/javascript" src="js/jquery.ui.extend.js"></script>
+<script type="text/javascript" src="lib/qtip2/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="lib/jQplot/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="lib/jQplot/jqplot.plugins.js"></script>
+<script type="text/javascript" src="js/jquery.list.min.js"></script>
+<script type="text/javascript" src="js/pertho.js"></script>
+<script type="text/javascript" src="lib/chronoline/raphael-min.js"></script>
+<script type="text/javascript" src="lib/chronoline/chronoline.js"></script>
+<script type='text/javascript' src='js/fullcalendar.min.js'></script>
+<script type='text/javascript' src='js/ajaxCache-0.2.1.min.js'></script>
+<script type="text/javascript" src="js/5.js"></script>
+
+
+<link rel='stylesheet' type='text/css' href='css/fullcalendar.css' />
+		<title>PM Expert Dashboard</title>
+
+		<!-- Foundation framework -->
+			<link rel="stylesheet" href="foundation/stylesheets/foundation.css">
+		<!-- jquery UI -->
+			<link rel="stylesheet" href="lib/jQueryUI/css/Aristo/Aristo.css" media="all" />
+		<!-- jQplot (charts) -->
+			<link rel="stylesheet" href="lib/jQplot/jquery.jqplot.css" media="all" />
+		<!-- fancybox -->
+			<link rel="stylesheet" href="lib/fancybox/jquery.fancybox-1.3.4.css" media="all" />
+<link rel="stylesheet" href="lib/datatables/css/demo_table_jui.css" media="all" />
+
+		<!-- fullcalendar -->
+			<link rel="stylesheet" href="lib/fullcalendar/fullcalendar.css" media="all" />
+		<!-- tooltips -->
+			<link rel="stylesheet" href="lib/qtip2/jquery.qtip.min.css" />
+		<!-- main styles -->
+			<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Google fonts -->
+			<link href='css/opensans.css' rel='stylesheet' />
+			
+
+		<!-- Favicons and the like (avoid using transparent .png) -->
+			<link rel="shortcut icon" href="favicon.ico" />
+			<link rel="apple-touch-icon-precomposed" href="icon.png" />
+
+
+      <link rel="stylesheet" type="text/css" href="lib/chronoline/chronoline.css" />
+
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="foundation/stylesheets/ie.css">
+		
+			<script src="lib/jQplot/excanvas.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body class="ptrn_a grdnt_a mhover_a">
+
+	<header id="forscroll3">
+			<div class="container head_s_a">
+				<div class="row sepH_b">
+					<div class="six columns">
+						<div class="row">
+							<div class="seven phone-two columns">
+								<div id="logo">
+									<img src="img/logo.png" alt="Dashboard"/>		
+								</div>
+							</div>
+							
+							
+						</div>
+					</div><img src="img/shap.png" alt="Dashboard" width=350 height=60px align="left" />
+				
+				</div>
+			</div>
+	
+
+	</header>
+		<div class="container" style="z-index:7">	
+			<div class="row">	
+	&nbsp;&nbsp;&nbsp;&nbsp;<a class="button white tiny radius nice" href="1.html"	><font color="#7e2a38">1</a>&nbsp;
+<a class="button white tiny radius nice" href="2.html"><font color="#7e2a38">2</font></a>&nbsp;
+<a class="button white tiny radius nice" href="3.html"><font color="#7e2a38">3</font></a>&nbsp;
+<a class="button white tiny radius nice" href="4.html"><font color="#7e2a38">4</font></a>&nbsp;
+<a class="button black tiny radius " href="5.html">5 страница</font></a>&nbsp;
+<span id="cached" style="display:none;">Закешированная версия.</span><br><a class="button white tiny" style="position:absolute;right:5%" href="contact.html"><b> обратная связь по Контрольным точкам</font></b></a><br>	
+
+<!-- Место под таблицу -->
+	
+
+<div class="twelve columns centered" id="forscroll2">
+	<div class="box_c_heading cf">
+							<p><center>Контрольные точки Программы	</center></p>
+ 	</div>
+
+</div>
+
+
+
+
+<div style="width:15%" class="display mobile_dt2 dt_act"></div><div  class="twelve columns centered">
+<div id="timeline" style="display:none;z-index:100;overflow:hidden;height:330px; margin: 0 auto;"></div></div>
+
+
+
+
+<div id="calendar" style="z-index:100; margin: 0 auto;"></div>
+
+
+<!-- 
+
+
+
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody>
+                                    <tr style="height:50px">
+                                        <td style="height:50px"><br></td>
+                                    </tr>
+				    <tr style="height:57px"><td style="height:57px;background-color:white">План</td></tr>
+				    <tr style="line-height:58px"><td  style="background-color:white">Факт</td></tr>
+                                </tbody>
+                            </table>
+</div>
+<div style="width:93%;overflow:scroll;line-height:50px; margin: 0 auto;padding-top: -223px;margin-top:-223px;margin-left:6%" class="scrollDiv" >
+ <table style="width:1440px;line-height:50px;" cellpadding="10" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody>
+                                    <tr align="center">
+                                        <td style="width: 120px;background-color:white;">январь</td>
+                                        <td style="width: 120px;background-color:white">февраль</td>
+					<td style="width: 120px;background-color:white">февраль</td>
+					<td style="width: 120px;background-color:white">февраль</td>
+					<td style="width: 120px;background-color:white">февраль</td>
+					<td style="width: 120px;background-color:white">февраль</td>
+                                    </tr><tr></tr>
+			            <tr style="height:68px"><td  colspan="12" style="background-color:white"><img src="img/planarr.png" style="bottom:67px;left:800px; position:absolute; z-index:1"/><label style="color:white;font-size:25px;bottom:-15px;left:797px; position:relative; z-index:2"><b>1</label> </td>
+				    <tr style="height:69px"><td  colspan="12" style="background-color:white"><img src="img/factarr.png" style="bottom:23px;left:200px;position:absolute; z-index:3"/><label style="color:black;font-size:25px;bottom:20px;left:197px; position:relative; z-index:4"><b>1</label></td>
+				    </tr>
+
+                                </tbody>
+                            </table>
+
+  </div>
+
+
+<div style="width:15%" class="display mobile_dt2 dt_act">
+<table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody>
+                                    <tr style="height:50px">
+                                        <td style="height:50px"><br></td>
+                                    </tr>
+				    <tr style="height:57px"><td style="height:57px;background-color:white">План</td></tr>
+				    <tr style="line-height:58px"><td  style="background-color:white">Факт</td></tr>
+                                </tbody>
+                            </table>
+</div>
+<div style="width:93%;line-height:50px; margin: 0 auto;padding-top: -223px;margin-top:-223px;margin-left:6%" class="scrollDiv" >
+ <table style="width:1440px;line-height:50px;" cellpadding="10" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody>
+                                    <tr align="center">
+                                        <td style="width: 120px;background-color:white;">январь</td>
+                                        <td style="width: 120px;background-color:white">февраль</td>
+					                              <td style="width: 120px;background-color:white">февраль</td>
+					<td style="width: 120px;background-color:white">февраль</td>
+					<td style="width: 120px;background-color:white">февраль</td>
+					<td style="width: 120px;background-color:white">февраль</td>
+                                    </tr><tr></tr>
+			            <tr style="height:68px"><td  colspan="12" style="background-color:white"></td>
+				    <tr style="height:69px"><td  colspan="12" style="background-color:white"><img src="img/factarr.png" style="bottom:23px;left:300px;position:absolute; z-index:3"/><label style="color:black;font-size:25px;bottom:20px;left:297px; position:relative; z-index:4"><b>3</label></td>
+				    </tr>
+
+                                </tbody>
+                            </table>
+
+  </div>
+ -->
+
+
+<!-- Добавил -->
+
+<div class="twelve columns centered" id="forscroll">
+<!-- Добавил -->
+
+ <table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody id="previous_list" align="center">
+                                    <tr ><td style="background-color:white" width="6%"></td>
+                                        <td style="background-color:#B0BED9"><b>Перечень незавершенных контрольных точек и контрольных точек предыдущего периода</b></td>
+                                        <td width="15%" style="background-color:#B0BED9"><b>План. Дата</td>
+					<td width="15%" style="background-color:#B0BED9"><b>Факт. Дата</td>
+                                    </tr><tr></tr>
+			            <!-- <tr><td style="background-color:white" width="4%">N</td>
+                                        <td>Задержка в...</td>
+                                        <td>15.03.12</td>
+					<td>15.03.12</td>
+				    </tr> -->
+
+                                </tbody>
+                            </table>
+
+ <table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody id="next_list" align="center">
+                                    <tr ><td style="background-color:white" width="6%"></td>
+                                        <td style="background-color:#B0BED9"><b>Перечень контрольных точек в следующем отчетном периоде</b></td>
+                                        <td width="15%" style="background-color:#B0BED9"><b>План. Дата</td>
+					<td width="15%" style="background-color:#B0BED9"><b>Прогноз. Дата</td>
+                                    </tr><!-- <tr></tr>
+			            <tr><td style="background-color:white" width="4%">N+1</td>
+                                        <td>Задержка в...</td>
+                                        <td ></td>
+					<td>15.06.12</td>
+				    </tr> -->
+
+                                </tbody>
+                            </table>
+
+</div></div>
+<div id="scroller" style="position:absolute;z-index:77;top:250px;left:5%;width:710px;height:850px;opacity:1;"></div>
+<br><br><br><br></div><img id="previous" src="img/arr_left.png" style="display:none;position:absolute;z-index:7;top:450px;left:-5%;height:150px;opacity:0.2;">	
+<center><div id="plank"><img src="img/plank.png" alt="Pertho Admin" width=60/></div></center>
+		<footer class="container" id="footer">
+			<div class="row">
+				<div class="twelve columns">
+                    Copyright © ЗАО «ПМ Эксперт»
+				</div>
+			</div>
+		</footer>
+
+<script>				
+
+$(document).ready( function (){
+
+$("#scroller").swipe({
+
+swipeRight: function () {
+window.location = "4.html";
+$(previous).show();
+		},
+threshold:100,
+fingers:1
+});
+
+
+$("#forscroll").swipe({
+
+swipeRight: function () {
+window.location = "4.html";
+$(previous).show();
+		},
+threshold:100,
+fingers:1
+});
+
+
+$("#forscroll2").swipe({
+
+swipeRight: function () {
+window.location = "4.html";
+$(previous).show();
+		},
+threshold:200,
+fingers:1
+
+});
+
+
+$("#forscroll3").swipe({
+
+swipeRight: function () {
+window.location = "4.html";
+$(previous).show();
+		},
+threshold:200,
+fingers:1
+
+});
+
+})
+
+</script>		
+		
+
+
+	</body>
+</html>

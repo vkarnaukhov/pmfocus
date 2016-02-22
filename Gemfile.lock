@@ -1,0 +1,49 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    capistrano (2.15.7)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    highline (1.7.8)
+    json (1.7.5)
+    kgio (2.7.4)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (3.0.2)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
+    rack (1.4.1)
+    rack-protection (1.3.2)
+      rack
+    raindrops (0.10.0)
+    rvm-capistrano (1.5.6)
+      capistrano (~> 2.15.4)
+    sinatra (1.3.3)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    tilt (1.3.3)
+    tiny_tds (0.5.1)
+    unicorn (4.5.0)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  capistrano
+  json
+  rvm-capistrano
+  sinatra
+  tiny_tds
+  unicorn
+
+BUNDLED WITH
+   1.11.2

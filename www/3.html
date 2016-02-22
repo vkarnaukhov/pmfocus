@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="js/highcharts-more.js"></script>
+<script type="text/javascript" src="lib/jQueryUI/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="js/s_scripts.js"></script>
+<script type="text/javascript" src="js/jquery.ui.extend.js"></script>
+<script type="text/javascript" src="lib/qtip2/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="lib/jQplot/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="lib/jQplot/jqplot.plugins.js"></script>
+<script type="text/javascript" src="js/jquery.list.min.js"></script>
+<script type="text/javascript" src="js/pertho.js"></script>
+<script type="text/javascript" src="js/3.js"></script>
+<script type="text/javascript" src="js/jquery.reveal.js"></script>
+<link rel="stylesheet" href="css/reveal.css">
+		<title>PM Expert Dashboard</title>
+
+		<!-- Foundation framework -->
+			<link rel="stylesheet" href="foundation/stylesheets/foundation.css">
+		<!-- jquery UI -->
+			<link rel="stylesheet" href="lib/jQueryUI/css/Aristo/Aristo.css" media="all" />
+		<!-- jQplot (charts) -->
+			<link rel="stylesheet" href="lib/jQplot/jquery.jqplot.css" media="all" />
+		<!-- fancybox -->
+			<link rel="stylesheet" href="lib/fancybox/jquery.fancybox-1.3.4.css" media="all" />
+<link rel="stylesheet" href="lib/datatables/css/demo_table_jui.css" media="all" />
+
+		<!-- fullcalendar -->
+			<link rel="stylesheet" href="lib/fullcalendar/fullcalendar.css" media="all" />
+		<!-- tooltips -->
+			<link rel="stylesheet" href="lib/qtip2/jquery.qtip.min.css" />
+		<!-- main styles -->
+			<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Google fonts -->
+			<link href='css/opensans.css' rel='stylesheet' />
+			<link href='css/dosis.css' rel='stylesheet' />
+
+
+		<!-- Favicons and the like (avoid using transparent .png) -->
+			<link rel="shortcut icon" href="favicon.ico" />
+			<link rel="apple-touch-icon-precomposed" href="icon.png" />
+
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="foundation/stylesheets/ie.css">
+		
+			<script src="lib/jQplot/excanvas.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body class="ptrn_a grdnt_a mhover_a">
+
+	<header>
+			<div class="container head_s_a">
+				<div class="row sepH_b">
+					<div class="six columns">
+						<div class="row">
+							<div class="seven phone-two columns">
+								<div id="logo">
+									<img src="img/logo.png" alt="Dashboard"/>		
+								</div>
+							</div>
+							
+							
+						</div>
+					</div><img src="img/shap.png" alt="Dashboard" width=350 height=60px align="left" />
+				
+				</div>
+			</div>
+	
+
+	</header>
+		<div class="container" id="uff">	
+			<div class="row">	
+	&nbsp;&nbsp;&nbsp;&nbsp;<a class="button white tiny radius nice" href="1.html"	><font color="#7e2a38">1</a>&nbsp;
+<a class="button white tiny radius nice" href="2.html"><font color="#7e2a38">2</font></a>&nbsp;
+<a class="button black tiny radius" href="3.html" >3 страница</font></a>&nbsp;
+<a class="button white tiny radius nice" href="4.html"><font color="#7e2a38">4</font></a>&nbsp;
+<a class="button white tiny radius nice" href="5.html"><font color="#7e2a38">5</font></a>&nbsp;
+<span id="cached" style="display:none;">Закешированная версия.</span><br><br> 
+	
+
+<!-- Место под таблицу -->
+	
+
+<div class="twelve columns centered">
+	<div class="box_c_heading cf">
+							<p><center>Показатели соблюдения графика и освоенного объема</center></p>
+						</div>
+<div class="six columns centered">
+ <table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody align="center">
+                                    <tr >
+                                        <td colspan="3" style="background-color:#B0BED9"><b>Первичные показатели Программы</td>
+                                    
+                                    </tr><tr></tr>
+			            <tr>
+                                        <td width=33%>Освоенный объем (EV)</td>
+                                        <td width=33%>Фактические Затраты (АС)</td>
+					<td width=33%>Плановое освоение (PV)</td>
+			
+					
+				    </tr>
+			            <tr >
+                                        <td id="ev" style="background-color:white">$-</td>
+                                        <td id="ac" style="background-color:white">$-</td>
+					<td id="pv" style="background-color:white">$-</td>
+					
+				    </tr>
+                                </tbody>
+                            </table>
+
+</div>
+
+
+ <table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody align="center">
+                                    <tr >
+                                        <td colspan="6" style="background-color:#B0BED9"><b>Показатели освоенного объема</td>
+                                    
+                                    </tr><tr></tr>
+			            <tr>
+                                        <td width=17%>Индекс выполнения сроков (SPI)</td>
+				        <td width=17%>Отклонение по срокам (SV)</td>
+                                        <td width=17%>Индекс выполнения стоимости (CPI)</td>
+                                        <td width=17%>Отклонение по стоимости (CV)</td>
+                                        <td width=17%>Стоимость до завершения (VAC)</td>					
+				    </tr>
+			            <tr >
+                                        <td id="spi" style="background-color:white"><br></td>
+                                        <td id="sv" style="background-color:white"></td>
+					                              <td id="cpi" style="background-color:white"></td>
+
+                                        <td id="cv" style="background-color:white"></td>
+					                             <td id="vac" style="background-color:white"></td>
+					
+				    </tr>
+                                </tbody>
+                            </table>
+</div>
+<div class="eleven columns centered" id="chart" style="left:-60px;height:200px"></div>
+</div><div class="row">
+
+<div class="six columns">
+<table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody align="center">
+                                    <tr >
+                                        <td colspan="3" style="background-color:#B0BED9"><b>Анализ показателей Программы</td>
+                                    
+                                    </tr><tr></tr>
+			            <tr>
+                                        <td width=33%>Стоимостной анализ</td>
+                                        <td id="res1">Экономия по бюджету</td>
+                                        <td width=10% id="res1b"></td>
+					
+				    </tr>
+			            <tr >
+                                        <td width=33% style="background-color:white">Анализ графика работ</td>
+                                        <td id="res2" style="background-color:white">Опережение по графику</td>
+					<td width=10% id="res2b" style="background-color:white"></td>
+				    </tr>
+	<tr><td colspan="3" style="background-color:#B0BED9"><b>Обобщающий показатель</td></tr>
+			            <tr >
+                                        <td width=33% style="background-color:white"><a href="#" data-reveal-id="myModal" style="color: inherit">Критический коэффициент<nobr> (CR)</a></td>
+                                        <td id="res3" style="background-color:white"></td>
+					<td width=10% id="res3b" style="background-color:white"></td>
+				    </tr>
+                                </tbody>
+                            </table>
+</div>
+<div class="six columns">
+
+ <table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody align="center">
+                                    <tr >
+                                        <td colspan="5" style="background-color:#B0BED9"><b>Сроки</td>
+                                    
+                                    </tr>
+			            <tr><td colspan="2" style="background-color:#B0BED9"></td>
+                                        <td width=33% style="background-color:white">SV>0 & SPI>1</td>
+                                        <td width=33% style="background-color:white">SV=0 & SPI=1</td>
+					<td width=33% style="background-color:white">SV<0 & SPI<1</td>
+					
+				    </tr>
+					<tr></tr>
+			            <tr >
+					<td rowspan="5" style="background-color:#B0BED9"><style type="text/css">hv {
+	width:17px;
+	writing-mode:tb-rl;
+	-webkit-transform:rotate(-90deg);
+	-moz-transform:rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	
+	display:block;
+ }</style><HV>Стоимость</HV></td> 
+					<td style="background-color:white">CV>0 & CPI>1</td>
+                                        <td id="t11" style="color:black;background-color:#cedbec;opacity:0.3">Опережение по графику и экономия по бюджету</td>
+                                        <td id="t12" style="color:white;background-color:#8ab5e0;opacity:0.3">Соблюдение графика и экономия по бюджету</td>
+					<td id="t13" style="color:white;background-color:#be425c;opacity:0.3">Отставание по графику и экономия по бюджету</td>
+					
+				    </tr>
+			            <tr >
+                                        <td id="ev" style="color:black;background-color:white">CV=0 & CPI=1</td>
+                                        <td id="t21"  style="color:white;background-color:#8ab5e0;opacity:0.3">Опережение по график и соблюдение по бюджету</td>
+					<td id="t22"  style="color:white;background-color:#906d85;opacity:0.3">Соблюдение графика и соблюдение бюджета</td>
+					<td id="t23"  style="color:white;background-color:#a1321f;opacity:0.3">Соблюдение графика и перерасход по бюджету</td>
+					
+				    </tr>
+			            <tr >
+					<td  style="color:black;background-color:white">CV<0 & CPI<1</td>
+                                        <td id="t31" style="color:white;background-color:#be425c;opacity:0.3">Опережение по графику и перерасход по бюджету</td>
+                                        <td id="t32" style="color:white;background-color:#a1321f;opacity:0.3">Соблюдение графика и перерасход по бюджету</td>
+					<td id="t33" style="color:white;background-color:#ed1b24;opacity:0.3">Отставание по графику и перерасход по бюджету</td>
+					
+				    </tr>
+                                </tbody>
+                            </table>
+
+
+</div></div>
+
+</div></div></div>
+<img id="next" src="img/arr_right.png" style="display:none;position:absolute;z-index:7;top:450px;right:-5%;height:150px;opacity:0.2;">
+<img id="previous" src="img/arr_left.png" style="display:none;position:absolute;z-index:7;top:450px;left:-5%;height:150px;opacity:0.2;">
+
+		<footer class="container"><center><img src="img/plank.png" alt="Pertho Admin" width=60/></center>
+			<div class="row" id="footer">
+                    Copyright © ЗАО «ПМ Эксперт»
+				</div>
+		</footer>
+
+
+<div id="myModal" class="reveal-modal large">
+  <h6>Критический коэффициент (CR)</h6><br>
+  <p class="lead">CR = SPI * CPI. Значение больше 1 говорит о плановом (удовлетворительном) состоянии хода выполнения проекта.</p>
+  <a class="close-reveal-modal">Закрыть</a>
+</div>
+		
+<script>				
+$(document).swipe({
+swipeLeft: function () {
+window.location = "4.html";
+$(next).show();
+		},
+
+swipeRight: function () {
+window.location = "2.html";
+$(previous).show();
+		},
+fingers:1,
+
+});
+</script>		
+
+	</body>
+</html>

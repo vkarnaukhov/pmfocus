@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/highcharts-more.js"></script>
+
+    <script type="text/javascript" src="lib/jQueryUI/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="js/s_scripts.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.extend.js"></script>
+    <script type="text/javascript" src="lib/qtip2/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="lib/jQplot/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="lib/jQplot/jqplot.plugins.js"></script>
+    <script type="text/javascript" src="js/jquery.list.min.js"></script>
+    <script type="text/javascript" src="js/pertho.js"></script>
+
+    <script type="text/javascript" src="js/4.js"></script>
+
+		<title>PM Expert Dashboard</title>
+
+		<!-- Foundation framework -->
+			<link rel="stylesheet" href="foundation/stylesheets/foundation.css">
+		<!-- jquery UI -->
+
+		<!-- main styles -->
+			<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Google fonts -->
+			<link href='css/opensans.css' rel='stylesheet' />
+			<link href='css/dosis.css' rel='stylesheet' />
+
+<link rel="stylesheet" href="lib/datatables/css/demo_table_jui.css" media="all" />
+
+
+
+		<!-- Favicons and the like (avoid using transparent .png) -->
+			<link rel="shortcut icon" href="favicon.ico" />
+			<link rel="apple-touch-icon-precomposed" href="icon.png" />
+
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="foundation/stylesheets/ie.css">
+			
+		<![endif]-->
+
+	</head>
+	<body class="ptrn_a grdnt_a mhover_a">
+
+	<header>
+			<div class="container head_s_a">
+				<div class="row sepH_b">
+					<div class="six columns">
+						<div class="row">
+							<div class="seven phone-two columns">
+								<div id="logo">
+									<img src="img/logo.png" alt="Pertho Admin"/>		
+								</div>
+							</div>
+							
+							
+						</div>
+					</div><img src="img/shap.png" alt="Pertho Admin" width=350 height=60px align="left" />
+				
+				</div>
+			</div>
+		
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="twelve columns">	
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="button white tiny radius nice" href="1.html"><font color="#7e2a38">1</font></a>&nbsp;
+<a class="button white tiny radius nice" href="2.html"><font color="#7e2a38">2</font></a>&nbsp;
+<a class="button white tiny radius nice" href="3.html"><font color="#7e2a38">3</font></a>&nbsp;
+<a class="button black tiny radius" href="4.html">4 страница</a>&nbsp;
+<a class="button white tiny radius nice" href="5.html"><font color="#7e2a38">5</font></a>&nbsp;
+<span id="cached" style="display:none;">Закешированная версия.</span><br><br> 
+
+					
+						<div class="box_c">
+						<div class="box_c_heading cf">
+							<p><center>Проведение работ по проектам Программы</center></p>
+						</div>
+
+						
+<div class="five columns" style="width:440px"><div class="five columns" id="spider" style="right:-15px;width:560px;height:330px;padding-top: -50px;margin-top:0px;margin-left:-90px"></div>
+						</div>
+<div class="four columns" style="left:-30px"><table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody id="works_table" align="center">
+                                    <tr >
+                                        <td style="background-color:#B0BED9"><b>Проект</td>
+                                        <td style="background-color:#B0BED9"><b><nobr>План, %</td>
+					<td style="background-color:#B0BED9"><b><nobr>Факт, %</td>
+					
+                                    </tr> <tr></tr><!--
+			            <tr>
+                                        <td align="left">Проект</td>
+                                        <td >0</td>
+					<td>4402</td>
+					
+				    </tr>
+			            <tr >
+                                        <td align="left">Проект</td>
+                                        <td>0</td>
+					<td>2,2</td>
+					
+				    </tr>
+			            <tr >
+                                        <td align="left">Проект</td>
+                                        <td>0</td>
+					<td>41</td>
+					
+				     </tr>
+			            <tr >
+                                        <td align="left">Проект</td>
+                                        <td>0</td>
+					<td>2017</td>
+					
+				    </tr>
+              		            <tr >
+                                        <td align="left">Проект</td>
+                                        <td>0</td>
+					<td>5728</td>
+					
+				    </tr>
+              		            <tr >
+                                        <td align="left">Проект</td>
+                                        <td>0</td>
+					<td>-</td>
+					
+				    </tr> -->
+                                </tbody>
+                            </table>	</div>						
+						
+						</div>
+					</div>
+				
+				
+				
+			<div class="twelve columns centered">
+	<br><br><div class="box_c_heading cf">
+							<p><center>Критичные риски программы</center></p>
+						</div>
+ <table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody id="risks_table" align="center">
+                                    <tr >	
+                                        <td style="background-color:#B0BED9">ID</td>
+                                        <td style="background-color:#B0BED9"><b>Риски</td>
+                                        <td style="background-color:#B0BED9"><b>Мероприятия по устранению рисков</td>
+					<td style="background-color:#B0BED9"><b>Ответственный</td>
+					
+                                    <!-- </tr><tr></tr>
+			            <tr>
+					
+                                        <td>Задержка в...</td>
+                                        <td >млн. долл.</td>
+					<td>4402</td>
+				    </tr>
+			            <tr >
+                                        <td>PI</td>
+                                        <td>Ед.</td>
+					<td>2,2</td>
+				    </tr>
+			            <tr >
+                                        <td >IRR</td>
+                                        <td>%</td>
+					<td>41</td>
+				     </tr>
+			            <tr >
+                                        <td >DPP</td>
+                                        <td>год</td>
+					<td>2017</td>
+				    </tr> -->
+
+                                </tbody>
+                            </table><br>
+<div class="box_c_heading cf">
+							<p><center>Реестр запросов на изменение</center></p>
+						</div>
+ <table cellpadding="0" cellspacing="0" border="0" class="display mobile_dt2 dt_act">
+                                <tbody id="documents_table" align="center">
+                                    <tr >
+					<td style="background-color:#B0BED9">ID</td>
+                                        <td style="background-color:#B0BED9"><b>Запрос на изменение</td>
+                                        <td width="15%" style="background-color:#B0BED9"><b>Дата</td>
+					<td width="15%" style="background-color:#B0BED9"><b>Статус</td>
+                                    <!-- </tr><tr></tr>
+			            <tr>
+                                        <td>Задержка в...</td>
+                                        <td >млн. долл.</td>
+					<td>4402</td>
+				    </tr> -->
+
+                                </tbody>
+                            </table></div>
+</div>	
+
+
+		</div>
+ 
+
+
+
+<br><img id="next" src="img/arr_right.png" style="display:none;position:absolute;z-index:7;top:450px;right:-5%;height:150px;opacity:0.2;">
+<img id="previous" src="img/arr_left.png" style="display:none;position:absolute;z-index:7;top:450px;left:-5%;height:150px;opacity:0.2;">
+		<footer class="container" id="footer"><center><div id="plank"><img src="img/plank.png" alt="Pertho Admin" width=60 /></div></center>
+			<div class="row">
+				<div class="twelve columns">
+                    Copyright © ЗАО «ПМ Эксперт»
+				</div>
+			</div>
+		</footer>
+
+	</body>
+</html>
