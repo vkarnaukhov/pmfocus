@@ -1,25 +1,30 @@
-# define paths and filenames
-deploy_to = "/etc/deployment/pmfocus"
-working_directory = "#{deploy_to}/current"
-pid_file = "#{deploy_to}/shared/pids/unicorn.pid"
-socket_file= "#{deploy_to}/shared/unicorn.sock"
-log_file = "#{deploy_to}/shared/log/unicorn.log"
-err_log = "#{deploy_to}/shared/log/unicorn_error.log"
-old_pid = pid_file + '.oldbin'
-
-timeout 30
-worker_processes 3 # increase or decrease
-listen socket_file, :backlog => 1024
-listen 8080
-
-pid pid_file
-stderr_path err_log
-stdout_path log_file
-
-# # make forks faster
+worker_processes 1  # количество воркер процессов, я люблю делать их по кол-ву ядер например
 # preload_app true
+user('deployer','staff')  # здесь указываем пользователя и группу его
+timeout 30 # таймаут работы приложения
 
-# # make sure that Bundler finds the Gemfile
-# before_exec do |server|
-#   ENV['BUNDLE_GEMFILE'] = File.expand_path('../Gemfile', File.dirname(__FILE__))
-# end
+@app = "/etc/deployment/pmfocus/current"  # путь к нашему размещенному приложению, разумеется project_name меняем на ваш везде
+@shared = "/etc/deployment/pmfocus/shared"  # путь к shared папке
+
+listen "#{@shared}/tmp/unicorn.socket"  # путь где будет лежать открытый Unicorn
+working_directory "#{@app}"
+pid "#{@shared}/tmp/unicorn.pid"  # ключ инстанса нашего запущенного сервера
+stderr_path "#{@shared}/log/unicorn.stderr.log"  # пути к логам unicorn'а
+stdout_path "#{@shared}/log/unicorn.stdout.log"
+
+GC.respond_to?(:copy_on_write_friendly=) and GC.copy_on_write_friendly = true
+
+before_fork do |server, worker|
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
+  old_pid = "#{server.config[:pid]}.oldbin"
+  if File.exists?(old_pid) && server.pid != old_pid
+    begin
+      Process.kill("QUIT", File.read(old_pid).to_i)
+    rescue Errno::ENOENT, Errno::ESRCH
+    end
+  end
+end
+
+after_fork do |server, worker|
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
+end

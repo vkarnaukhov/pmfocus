@@ -16,7 +16,6 @@ set :use_sudo, false
 
 set :deploy_to,       "/etc/deployment/#{application}"  # наша папка куда мы размещаем 
 set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
-set :bundle_gemfile, "Documents/src_cap/Gemfile"
 role :web, deploy_server                          # Your HTTP server, Apache/etc
 role :app, deploy_server                          # This may be the same as your `Web` server
 
