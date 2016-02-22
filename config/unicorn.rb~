@@ -1,6 +1,6 @@
 worker_processes 1  # количество воркер процессов, я люблю делать их по кол-ву ядер например
-# preload_app true
-user('deployer','staff')  # здесь указываем пользователя и группу его
+preload_app true
+# user('deployer','staff')  # здесь указываем пользователя и группу его
 timeout 30 # таймаут работы приложения
 
 @app = "/etc/deployment/pmfocus/current"  # путь к нашему размещенному приложению, разумеется project_name меняем на ваш везде

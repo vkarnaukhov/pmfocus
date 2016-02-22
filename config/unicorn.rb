@@ -3,8 +3,8 @@ preload_app true
 # user('deployer','staff')  # здесь указываем пользователя и группу его
 timeout 30 # таймаут работы приложения
 
-@app = "/etc/deployment/pmfocus/current"  # путь к нашему размещенному приложению, разумеется project_name меняем на ваш везде
-@shared = "/etc/deployment/pmfocus/shared"  # путь к shared папке
+@app = "/etc/deployment/PMFocus/current"  # путь к нашему размещенному приложению, разумеется project_name меняем на ваш везде
+@shared = "/etc/deployment/PMFocus/shared"  # путь к shared папке
 
 listen "#{@shared}/tmp/unicorn.socket"  # путь где будет лежать открытый Unicorn
 working_directory "#{@app}"
