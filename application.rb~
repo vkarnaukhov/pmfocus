@@ -22,7 +22,7 @@ set :timeline_yellow_score, 6
 db_client = TinyTds::Client.new(
 	:username => 'pxrptuser', 
 	:password => 'pxrptuser', 
-	:host => '10.8.10.64',
+	:host => '10.8.10.42',
 	:database => 'PMDB_test',
   :encoding => 'CP1251')
 

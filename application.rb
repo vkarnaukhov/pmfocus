@@ -46,7 +46,7 @@ get '/data/login' do
   {'user_name' => options.user_name}.to_json
 end
 
-get '/data/index' do
+get '/data/1' do
   result = {}
   # Полное наименование программы - eps_name
   # Исполнительный директор программы - eps_exec_dir
